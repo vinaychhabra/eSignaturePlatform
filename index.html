@@ -15,9 +15,18 @@
 </head>
 
 <body>
+    <header>
     <h1>Signature Web App</h1>
+</header>
     <!-- Canvas -->
-    <canvas id="signatureCanvas" width="400" height="200"></canvas>
+    <section>
+        <div class="canvas-container">
+            <canvas id="signatureCanvas" width="400" height="200"></canvas>
+        </div>
+        <div class="action-buttons">
+            <button onclick="downloadSignature()">Download Signature</button>
+        </div>
+    </section>
 </body>
 <script>
     const canvas = document.getElementById('signatureCanvas');
@@ -51,6 +60,15 @@
     canvas.addEventListener('mousemove', draw);
     canvas.addEventListener('mouseup', endDrawing);
     canvas.addEventListener('mouseout', endDrawing);
+
+     // Download signature as image
+     function downloadSignature() {
+            const dataURL = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = dataURL;
+            link.download = 'signature.png';
+            link.click();
+        }
 </script>
 
 </html>
