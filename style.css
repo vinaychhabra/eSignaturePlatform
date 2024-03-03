@@ -1,0 +1,58 @@
+
+body{
+    background-color: #F9E8C9;
+    margin: 0;
+    padding: 0;
+}
+#signatureCanvas {
+    border: 1px solid #000;
+    cursor: url(assets/pen.png) 1 26, pointer;
+    border-radius: 4px;
+}
+header{
+    color: #fff;
+    background-color: #211C6A;
+    padding: 1px 1rem;
+    text-align: left;
+}
+h1{
+    font-size: 1.5rem;;
+}
+.canvas-section{
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    display: flex;
+}
+#signatureCanvas{
+    width: 90%;
+    background-color: #fff;
+}
+.action-buttons{
+    color: #fff;
+}
+.btn{
+    background-color: #211C6A;
+    border-radius: 3px;;
+    padding:5px;
+    color: #fff;
+}
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+footer > p {
+    text-align: center;
+    color: #211C6A
+
+}
+.signature-bg-img{
+    width: 90%;
+}
+@media only screen and (min-width:768px){
+    .canvas-section{
+        flex-direction: row;
+        justify-content: center;
+    }
+}
