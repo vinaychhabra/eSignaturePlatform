@@ -3,34 +3,46 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>eSignature Web App</title>
-    <link href="style.css" rel="stylesheet" />
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.jpg">
 </head>
+
 <body>
     <header>
-        <h1>Signature Web App</h1>
+        <h1>✍️ Signature Web App</h1>
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <i id="themeIcon" class="material-icons">brightness_6</i>
+        </div>
     </header>
+
     <!-- Canvas -->
     <section class="canvas-section">
         <div class="left-div">
-        <div class="canvas-container">
-            <canvas id="signatureCanvas" width="450" height="200"></canvas>
+            <div class="canvas-container">
+                <canvas id="signatureCanvas" width="450" height="200"></canvas>
+            </div>
+            <div class="action-buttons">
+                <label for="uploadFile" class="btn btn-upload upload-label">Upload Image
+                    <input type="file" id="uploadFile" accept=".png, .jpg, .jpeg, .pdf">
+                </label>
+                <button class="btn btn-download" onclick="downloadSignature()">Download</button>
+                <button class="btn btn-clear" onclick="clearCanvas()">Clear</button>
+            </div>
         </div>
-        <div class="action-buttons">
-            <input class="btn btn-upload" type="file" id="uploadFile" accept=".png, .jpg, .jpeg, .pdf">
-            <button class="btn btn-download" onclick="downloadSignature()">Download</button>
-            <button class="btn btn-clear" onclick="clearCanvas()">Clear</button>
+        <div class="right-div">
+            <img class="signature-bg-img" src="assets/signature.png" alt="Background Signature Image" />
         </div>
-    </div>
-    <div class="right-div">
-        <img class="signature-bg-img" src="assets/signature.png" />
-    </div>
     </section>
+
     <footer>
-        <p>Designed and Developed by <a src="https://www.linkedin.com/in/vinay-chhabra-631665128">Vinay Chhabra</a></p>
+        <p>Designed and Developed by <a href="https://www.linkedin.com/in/vinay-chhabra-631665128">Vinay Chhabra
+                🧑‍💻</a></p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
